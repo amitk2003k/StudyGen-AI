@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="StudyGen AI – Smart Study Generator powered by IBM watsonx Orchestrate. Summarize notes, generate quizzes, create flashcards, and build personalized study plans." />
+  <title>StudyGen AI – Smart Study Generator</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="#home" class="nav-logo" aria-label="StudyGen AI – go to home">
+        <span class="logo-icon" aria-hidden="true">⚡</span>
+        <span class="logo-text">StudyGen <span class="logo-accent">AI</span></span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#home"       class="nav-link active">Home</a></li>
+        <li><a href="#features"   class="nav-link">Features</a></li>
+        <li><a href="#about"      class="nav-link">About</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#assistant"  class="nav-link">AI Assistant</a></li>
+        <li><a href="#faq"        class="nav-link">FAQ</a></li>
+        <li><a href="#contact"    class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="#assistant" class="btn btn-primary nav-cta">Launch Assistant</a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section class="hero" id="home" aria-label="Hero banner">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+
+    <div class="hero-container">
+      <!-- Text side -->
+      <div class="hero-content fade-in">
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Powered by IBM watsonx Orchestrate
+        </div>
+
+        <h1 class="hero-title">
+          Study Smarter with<br />
+          <span class="gradient-text">StudyGen AI</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Your intelligent AI-powered study companion that simplifies complex concepts,
+          summarizes notes, generates quizzes, creates flashcards, and builds
+          personalized study plans to help students succeed.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#assistant" class="btn btn-primary btn-lg">
+            <span aria-hidden="true">🚀</span> Launch AI Assistant
+          </a>
+          <a href="#features" class="btn btn-outline btn-lg">
+            Explore Features <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <span class="trust-item"><span aria-hidden="true">✓</span> Free to use</span>
+          <span class="trust-item"><span aria-hidden="true">✓</span> No sign-up required</span>
+          <span class="trust-item"><span aria-hidden="true">✓</span> Available 24/7</span>
+        </div>
+      </div>
+
+      <!-- Illustration side -->
+      <div class="hero-visual slide-up" aria-hidden="true">
+        <div class="hero-card floating">
+          <div class="hcard-header">
+            <div class="hcard-dot red"></div>
+            <div class="hcard-dot yellow"></div>
+            <div class="hcard-dot green"></div>
+            <span class="hcard-title">StudyGen AI</span>
+          </div>
+          <div class="hcard-body">
+            <div class="chat-bubble ai-bubble">
+              <div class="bubble-avatar" aria-hidden="true">AI</div>
+              <div class="bubble-text">
+                Here's a concise summary of your chapter on Quantum Mechanics…
+              </div>
+            </div>
+            <div class="chat-bubble user-bubble">
+              <div class="bubble-text">
+                Can you create 5 practice quiz questions?
+              </div>
+              <div class="bubble-avatar user" aria-hidden="true">U</div>
+            </div>
+            <div class="chat-bubble ai-bubble">
+              <div class="bubble-avatar" aria-hidden="true">AI</div>
+              <div class="bubble-text">
+                Sure! Here are 5 MCQs based on your notes… <span class="typing-cursor">|</span>
+              </div>
+            </div>
+          </div>
+          <!-- Floating chips -->
+          <div class="feature-chip chip-1">📝 Quiz Ready</div>
+          <div class="feature-chip chip-2">🧠 Flashcards</div>
+          <div class="feature-chip chip-3">📅 Study Plan</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#features" class="scroll-indicator" aria-label="Scroll to features">
+      <div class="scroll-dot"></div>
+    </a>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FEATURES
+  ═══════════════════════════════════════════════ -->
+  <section class="features section" id="features" aria-labelledby="features-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-badge">Features</div>
+        <h2 class="section-title" id="features-heading">Everything You Need to <span class="gradient-text">Study Smarter</span></h2>
+        <p class="section-subtitle">Six powerful AI capabilities built to accelerate your academic performance.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <article class="feature-card" tabindex="0">
+          <div class="feature-icon" aria-hidden="true">📚</div>
+          <h3 class="feature-title">Smart Summaries</h3>
+          <p class="feature-desc">Generate concise, well-structured summaries from lengthy notes and textbooks in seconds.</p>
+          <div class="card-shine" aria-hidden="true"></div>
+        </article>
+
+        <article class="feature-card" tabindex="0">
+          <div class="feature-icon" aria-hidden="true">💡</div>
+          <h3 class="feature-title">Concept Explanation</h3>
+          <p class="feature-desc">Explain difficult concepts in simple language, enriched with real-world examples you can relate to.</p>
+          <div class="card-shine" aria-hidden="true"></div>
+        </article>
+
+        <article class="feature-card" tabindex="0">
+          <div class="feature-icon" aria-hidden="true">📝</div>
+          <h3 class="feature-title">Quiz Generator</h3>
+          <p class="feature-desc">Instantly generate MCQs, True/False questions, and complete practice quizzes from any topic.</p>
+          <div class="card-shine" aria-hidden="true"></div>
+        </article>
+
+        <article class="feature-card" tabindex="0">
+          <div class="feature-icon" aria-hidden="true">🧠</div>
+          <h3 class="feature-title">Flashcard Generator</h3>
+          <p class="feature-desc">Automatically create smart flashcards for quick active-recall revision sessions.</p>
+          <div class="card-shine" aria-hidden="true"></div>
+        </article>
+
+        <article class="feature-card" tabindex="0">
+          <div class="feature-icon" aria-hidden="true">📅</div>
+          <h3 class="feature-title">Personalized Study Planner</h3>
+          <p class="feature-desc">Build customized study schedules tailored to your exam dates and available study hours.</p>
+          <div class="card-shine" aria-hidden="true"></div>
+        </article>
+
+        <article class="feature-card" tabindex="0">
+          <div class="feature-icon" aria-hidden="true">🎯</div>
+          <h3 class="feature-title">Exam Preparation</h3>
+          <p class="feature-desc">Receive focused revision strategies and personalized learning support ahead of any exam.</p>
+          <div class="card-shine" aria-hidden="true"></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════════ -->
+  <section class="about section" id="about" aria-labelledby="about-heading">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <!-- Illustration -->
+        <div class="about-visual fade-in" aria-hidden="true">
+          <div class="about-illustration">
+            <div class="ai-orb">
+              <div class="orb-ring ring-1"></div>
+              <div class="orb-ring ring-2"></div>
+              <div class="orb-ring ring-3"></div>
+              <div class="orb-core">AI</div>
+            </div>
+            <div class="about-chip chip-a">📚 Summaries</div>
+            <div class="about-chip chip-b">📝 Quizzes</div>
+            <div class="about-chip chip-c">🧠 Flashcards</div>
+            <div class="about-chip chip-d">📅 Study Plans</div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="about-content slide-up">
+          <div class="section-badge">About</div>
+          <h2 class="section-title" id="about-heading">What is <span class="gradient-text">StudyGen AI?</span></h2>
+          <p class="about-text">
+            StudyGen AI is an intelligent study assistant powered by
+            <strong>IBM watsonx Orchestrate</strong> — IBM's enterprise-grade AI orchestration
+            platform. It is designed to transform the way students learn by combining the
+            power of large language models with structured academic workflows.
+          </p>
+          <p class="about-text">
+            Whether you are preparing for university exams, studying a new programming
+            language, or trying to understand a complex scientific concept, StudyGen AI
+            delivers instant, personalized academic support — exactly when you need it.
+          </p>
+
+          <ul class="about-list" role="list">
+            <li class="about-list-item"><span class="list-icon" aria-hidden="true">✓</span> Understand difficult concepts quickly</li>
+            <li class="about-list-item"><span class="list-icon" aria-hidden="true">✓</span> Revise efficiently with smart flashcards</li>
+            <li class="about-list-item"><span class="list-icon" aria-hidden="true">✓</span> Generate quizzes to test your knowledge</li>
+            <li class="about-list-item"><span class="list-icon" aria-hidden="true">✓</span> Create structured, personalized study plans</li>
+            <li class="about-list-item"><span class="list-icon" aria-hidden="true">✓</span> Prepare confidently for any examination</li>
+          </ul>
+
+          <a href="#assistant" class="btn btn-primary">Try StudyGen AI →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       HOW IT WORKS
+  ═══════════════════════════════════════════════ -->
+  <section class="how-it-works section" id="how-it-works" aria-labelledby="hiw-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-badge">Process</div>
+        <h2 class="section-title" id="hiw-heading">How It <span class="gradient-text">Works</span></h2>
+        <p class="section-subtitle">Four simple steps from question to mastery.</p>
+      </div>
+
+      <div class="steps-container" role="list">
+
+        <div class="step-item" role="listitem">
+          <div class="step-icon-wrap" aria-hidden="true">
+            <div class="step-icon">💬</div>
+          </div>
+          <div class="step-number" aria-hidden="true">01</div>
+          <h3 class="step-title">Ask Your Question</h3>
+          <p class="step-desc">Type any academic question, paste your notes, or request a specific study task in plain language.</p>
+        </div>
+
+        <div class="step-connector" aria-hidden="true"><div class="connector-line"></div></div>
+
+        <div class="step-item" role="listitem">
+          <div class="step-icon-wrap" aria-hidden="true">
+            <div class="step-icon">⚙️</div>
+          </div>
+          <div class="step-number" aria-hidden="true">02</div>
+          <h3 class="step-title">AI Analyzes Request</h3>
+          <p class="step-desc">StudyGen AI — powered by IBM watsonx Orchestrate — intelligently interprets your learning needs.</p>
+        </div>
+
+        <div class="step-connector" aria-hidden="true"><div class="connector-line"></div></div>
+
+        <div class="step-item" role="listitem">
+          <div class="step-icon-wrap" aria-hidden="true">
+            <div class="step-icon">✨</div>
+          </div>
+          <div class="step-number" aria-hidden="true">03</div>
+          <h3 class="step-title">Generates Content</h3>
+          <p class="step-desc">Receives summaries, quizzes, flashcards, concept explanations, or a full personalized study plan.</p>
+        </div>
+
+        <div class="step-connector" aria-hidden="true"><div class="connector-line"></div></div>
+
+        <div class="step-item" role="listitem">
+          <div class="step-icon-wrap" aria-hidden="true">
+            <div class="step-icon">🏆</div>
+          </div>
+          <div class="step-number" aria-hidden="true">04</div>
+          <h3 class="step-title">Achieve Better Results</h3>
+          <p class="step-desc">Study smarter, retain more, and walk into any exam fully prepared and confident.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       AI ASSISTANT (CHATBOT EMBED)
+  ═══════════════════════════════════════════════ -->
+  <section class="assistant section" id="assistant" aria-labelledby="assistant-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-badge">AI Assistant</div>
+        <h2 class="section-title" id="assistant-heading">Talk with <span class="gradient-text">StudyGen AI</span></h2>
+        <p class="section-subtitle">
+          Ask questions, summarize notes, generate quizzes, create flashcards,
+          explain concepts, and receive personalized study plans — instantly.
+        </p>
+      </div>
+
+      <div class="assistant-wrapper">
+        <div class="assistant-card">
+          <div class="assistant-card-header">
+            <div class="assistant-status">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>StudyGen AI is online</span>
+            </div>
+            <div class="assistant-powered">Powered by IBM watsonx Orchestrate</div>
+          </div>
+
+          <!-- IBM watsonx Orchestrate chatbot root -->
+          <div id="root" class="chatbot-root" aria-label="StudyGen AI chatbot interface"></div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       STATISTICS
+  ═══════════════════════════════════════════════ -->
+  <section class="stats section" id="stats" aria-labelledby="stats-heading">
+    <div class="container">
+      <h2 class="visually-hidden" id="stats-heading">Platform Statistics</h2>
+
+      <div class="stats-grid">
+
+        <div class="stat-item fade-in">
+          <div class="stat-value" data-target="95" data-suffix="%">0%</div>
+          <div class="stat-label">Learning Efficiency</div>
+        </div>
+
+        <div class="stat-item fade-in">
+          <div class="stat-value" data-target="24" data-suffix="/7">0/7</div>
+          <div class="stat-label">Availability</div>
+        </div>
+
+        <div class="stat-item fade-in">
+          <div class="stat-value" data-target="100" data-suffix="+">0+</div>
+          <div class="stat-label">Supported Topics</div>
+        </div>
+
+        <div class="stat-item fade-in">
+          <div class="stat-value stat-text">AI</div>
+          <div class="stat-label">Personalized Learning</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════════════ -->
+  <section class="testimonials section" id="testimonials" aria-labelledby="test-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-badge">Testimonials</div>
+        <h2 class="section-title" id="test-heading">What Learners <span class="gradient-text">Say</span></h2>
+        <p class="section-subtitle">Real feedback from students and educators who use StudyGen AI.</p>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <article class="testimonial-card" tabindex="0">
+          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+          <blockquote class="testimonial-quote">
+            "StudyGen AI completely changed how I prepare for my finals. The summaries are
+            spot-on and the practice quizzes helped me score 20% higher than last semester."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">ES</div>
+            <div class="author-info">
+              <div class="author-name">Alex M.</div>
+              <div class="author-role">Engineering Student</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card featured-testimonial" tabindex="0">
+          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+          <blockquote class="testimonial-quote">
+            "The AI-generated flashcards and concept explanations made studying anatomy
+            so much more manageable. I can't imagine exam season without it now."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar avatar-purple" aria-hidden="true">MS</div>
+            <div class="author-info">
+              <div class="author-name">Priya K.</div>
+              <div class="author-role">Medical Student</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card" tabindex="0">
+          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+          <blockquote class="testimonial-quote">
+            "I recommend StudyGen AI to all my students. It is a great AI-powered learning
+            assistant that makes self-directed study genuinely effective and engaging."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar avatar-green" aria-hidden="true">PR</div>
+            <div class="author-info">
+              <div class="author-name">Dr. James R.</div>
+              <div class="author-role">Professor</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════════════ -->
+  <section class="faq section" id="faq" aria-labelledby="faq-heading">
+    <div class="container faq-container">
+
+      <div class="section-header">
+        <div class="section-badge">FAQ</div>
+        <h2 class="section-title" id="faq-heading">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      </div>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-a1">
+            <span>What is StudyGen AI?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a1" role="region" hidden>
+            <p>StudyGen AI is an intelligent, AI-powered study assistant built on IBM watsonx Orchestrate. It helps students summarize notes, explain concepts, generate quizzes and flashcards, and create personalized study plans — all through a natural-language conversational interface.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-a2">
+            <span>How does it generate quizzes?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a2" role="region" hidden>
+            <p>Simply paste your notes or specify a topic and ask StudyGen AI to create a quiz. The AI will generate multiple-choice questions, True/False questions, or short-answer questions based on the content you provide, complete with correct answers and brief explanations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-a3">
+            <span>Can it explain difficult topics?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a3" role="region" hidden>
+            <p>Absolutely. StudyGen AI is designed to break down complex academic concepts into clear, digestible explanations. It uses analogies, step-by-step breakdowns, and real-world examples to make difficult subjects in science, mathematics, technology, and more fully understandable.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-a4">
+            <span>Can it create personalized study plans?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a4" role="region" hidden>
+            <p>Yes. Tell StudyGen AI your exam date, the subjects you need to cover, and how many hours you can study each day. It will generate a structured, day-by-day study schedule that prioritizes your weaker areas and ensures comprehensive coverage before your exam.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-a5">
+            <span>Is the AI assistant available anytime?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-a5" role="region" hidden>
+            <p>Yes. StudyGen AI is available 24 hours a day, 7 days a week. Whether you are studying late at night before an exam or reviewing material early in the morning, the AI assistant is always ready to help — with no waiting and no appointments required.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════════ -->
+  <section class="contact section" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-badge">Contact</div>
+        <h2 class="section-title" id="contact-heading">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="section-subtitle">Questions about the project? Reach out through any of the channels below.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <div class="contact-icon" aria-hidden="true">📧</div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">studygen.ai@example.com</div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon" aria-hidden="true">💻</div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">github.com/studygen-ai</div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon" aria-hidden="true">🔗</div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">linkedin.com/in/studygen-ai</div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon" aria-hidden="true">🤖</div>
+          <div class="contact-label">Powered By</div>
+          <div class="contact-value">IBM watsonx Orchestrate</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon" aria-hidden="true">⚡</span>
+        <span class="logo-text">StudyGen <span class="logo-accent">AI</span></span>
+      </div>
+      <p class="footer-tagline">Smart Study Generator · Powered by IBM watsonx Orchestrate</p>
+      <div class="footer-links" role="list">
+        <a href="#home"         role="listitem" class="footer-link">Home</a>
+        <a href="#features"     role="listitem" class="footer-link">Features</a>
+        <a href="#about"        role="listitem" class="footer-link">About</a>
+        <a href="#how-it-works" role="listitem" class="footer-link">How It Works</a>
+        <a href="#assistant"    role="listitem" class="footer-link">AI Assistant</a>
+        <a href="#faq"          role="listitem" class="footer-link">FAQ</a>
+      </div>
+      <p class="footer-copy">© 2026 StudyGen AI. Built with IBM watsonx Orchestrate.</p>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════
+       IBM watsonx Orchestrate CHATBOT EMBED
+       Runs after DOMContentLoaded so #root is guaranteed
+       to exist in the DOM before wxoLoader.init() fires.
+  ═══════════════════════════════════════════════ -->
+  <script>
+    window.wxOConfiguration = {
+      orchestrationID: "07e7aab5419b46a5a25f32a9f7200045_0ed5b433-8774-449f-aa1c-4977087e1090",
+      hostURL: "https://au-syd.watson-orchestrate.cloud.ibm.com",
+      rootElementID: "root",
+      deploymentPlatform: "ibmcloud",
+      crn: "crn:v1:bluemix:public:watsonx-orchestrate:au-syd:a/07e7aab5419b46a5a25f32a9f7200045:0ed5b433-8774-449f-aa1c-4977087e1090::",
+      chatOptions: {
+        agentId: "7f9ac980-88e1-44f8-934d-a1c6757410b7",
+      }
+    };
+
+    /* Wait for the full DOM before injecting the loader */
+    document.addEventListener('DOMContentLoaded', function () {
+      var script = document.createElement('script');
+      script.src = window.wxOConfiguration.hostURL + '/wxochat/wxoLoader.js?embed=true';
+      script.addEventListener('load', function () {
+        wxoLoader.init();
+      });
+      document.head.appendChild(script);
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
